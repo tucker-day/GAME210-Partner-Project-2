@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{7ad5c615-454f-4996-9b8a-80d529d4ffb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{55f39cef-180f-4e9f-8e8b-f2c09f00ec0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{e8c0bd4e-ba7e-45f4-9492-7e6f05cd9716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gameplay">
+      <UniqueIdentifier>{b0e6aa60-fd50-44b0-9da3-88667ea48dcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\ColourBlock">
+      <UniqueIdentifier>{88f39705-b965-4fb3-a9e9-35415b0235db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\ColourCircle">
+      <UniqueIdentifier>{3e35c303-e269-468f-b779-6fa9a5f9cc63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Body">
+      <UniqueIdentifier>{881d954c-ee3f-4e9e-9bfc-acdfda113a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\GameObject">
+      <UniqueIdentifier>{f80f9073-a635-4e20-a6f3-d1b2faa2edb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjectFactory">
+      <UniqueIdentifier>{9bbad1c6-1392-4c70-9325-476b96baee50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LoadManager">
+      <UniqueIdentifier>{64dce56c-273b-4956-8573-96684e2f47f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayManager.cpp">
+      <Filter>Source Files\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourBlock.cpp">
+      <Filter>Source Files\Objects\ColourBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourCircle.cpp">
+      <Filter>Source Files\Objects\ColourCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadManager.cpp">
+      <Filter>Source Files\LoadManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFactory.cpp">
+      <Filter>Source Files\ObjectFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Objects\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Body.cpp">
+      <Filter>Source Files\Objects\Body</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics.h">
+      <Filter>Source Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayManager.h">
+      <Filter>Source Files\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjData.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourBlock.h">
+      <Filter>Source Files\Objects\ColourBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourCircle.h">
+      <Filter>Source Files\Objects\ColourCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>Source Files\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Body.h">
+      <Filter>Source Files\Objects\Body</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadManager.h">
+      <Filter>Source Files\LoadManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source Files\Objects\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsData.h">
+      <Filter>Source Files\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="error.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="knightSheet.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
