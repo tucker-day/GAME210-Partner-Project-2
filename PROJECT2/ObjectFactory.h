@@ -14,8 +14,6 @@ public:
 	ObjectFactory();
 	~ObjectFactory();
 
-	LoadManager loadManager;
-
 	// runs the update function of all game objects in the factory
 	void updateAll();
 

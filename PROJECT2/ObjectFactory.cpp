@@ -46,7 +46,7 @@ void ObjectFactory::renderAll()
 GameObject* ObjectFactory::createSprite(int x, int y, int rot, const char* key, short frame, bool visable)
 {
 	// get the sprite
-	_Sprite* sprite = loadManager.getSprite(key);
+	_Sprite* sprite = LoadManager::getSprite(key);
 
 	// create the body so its in the same position and size as the parent
 	_Body body = _Body({ x, y, sprite->frameWidth, sprite->frameHeight });
@@ -95,7 +95,6 @@ void ObjectFactory::deleteAllObjects()
 		delete Objects->at(i);
 	}
 
-	// clear all the pointers than shrink the vector
+	// clear all the pointers
 	Objects->clear();
-	Objects->shrink_to_fit();
 }

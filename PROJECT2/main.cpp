@@ -10,12 +10,15 @@ int main( int argc, char *argv[] )
 	{
 		return false;
 	}
+	LoadManager::Init();
 
 	GameplayManager Game;
 
 	// Main game loop
 	while (GameRunning) 
 	{
+		Game.updateNextTime();
+
 		// handle button events
 		GameRunning = EventHandler::Update();
 		Graphics::StartRender();
@@ -23,13 +26,14 @@ int main( int argc, char *argv[] )
 		Game.Update();
 		Game.Render();
 
-		SDL_Delay(50);
+		SDL_Delay(Game.frameTimeLeft());
 
 		// apply the changes to the screen 
 		Graphics::EndRender();
 	}
 
 	Graphics::Shutdown();
+	LoadManager::Shutdown();
 
 	//close off the SDL window
 	SDL_Quit();

@@ -128,7 +128,6 @@ void Graphics::DrawText(const char* text, float x, float y, int width, int heigh
 _Texture Graphics::CreateTexture(const char* file)
 {
 	// CODE IS BASED OFF YASH'S SDL TEMPLATE
-	
 	SDL_Surface* temp;
 
 	// load the file

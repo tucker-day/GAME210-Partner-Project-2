@@ -17,8 +17,6 @@ public:
 	static const int WINDOW_HEIGHT = 720;
 	static const bool RENDER_BODIES = true;
 
-	static SDL_Renderer* renderer;
-
 	static bool Init();
 
 	static void StartRender();
@@ -41,6 +39,7 @@ public:
 	static void DrawText(const char* text, float x, float y, int width, int height, int r, int g, int b);
 
 private:
+	static SDL_Renderer* renderer;
 	static SDL_Window* window;
 	static TTF_Font* font;
 };

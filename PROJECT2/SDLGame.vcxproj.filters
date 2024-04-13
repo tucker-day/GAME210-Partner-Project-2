@@ -39,6 +39,9 @@
     <Filter Include="Source Files\LoadManager">
       <UniqueIdentifier>{64dce56c-273b-4956-8573-96684e2f47f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects\Animator">
+      <UniqueIdentifier>{cb5e205d-9e88-4637-91e3-60f64ad2a84d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="Body.cpp">
       <Filter>Source Files\Objects\Body</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Source Files\Objects\Animator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +111,9 @@
     </ClInclude>
     <ClInclude Include="GraphicsData.h">
       <Filter>Source Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Source Files\Objects\Animator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
