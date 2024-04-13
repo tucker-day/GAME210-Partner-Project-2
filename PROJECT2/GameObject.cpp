@@ -5,10 +5,10 @@
 GameObject::GameObject(_Sprite* s, _Body b, _Transform t, int f, bool v)
 	: sprite(s), body(b), transform(t), visable(v), animator(_Animator(f)) {}
 
-void GameObject::play(const char* key)
+void GameObject::play(const char* key, bool override)
 {
 	// call the play function of the animator
-	animator.play(key);
+	animator.play(key, override);
 }
 
 void GameObject::render()

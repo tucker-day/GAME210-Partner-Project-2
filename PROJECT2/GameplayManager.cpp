@@ -8,6 +8,7 @@ void GameplayManager::Init()
 	LoadManager::loadSprite("error", "error.bmp");
 
 	LoadManager::createAnimation("knight_walk", 0, 9, 3);
+	LoadManager::createAnimation("test", 0, 40);
 
 	player = objects.createSprite(50, 50, 0, "knight");
 	player->body.setOffset(48, 42);
@@ -33,6 +34,11 @@ void GameplayManager::Update()
 	}
 
 	test->transform.rot += 2;
+
+	if (player->body.checkCollision(test->body))
+	{
+		player->play("test");
+	}
 
 	objects.updateAll();
 }

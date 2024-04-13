@@ -16,7 +16,7 @@ public:
 	_Body body;
 	_Transform transform;
 
-	void play(const char* key);
+	void play(const char* key, bool overide = false);
 
 	virtual void render();
 	virtual void update();

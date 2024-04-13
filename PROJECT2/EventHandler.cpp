@@ -1,6 +1,4 @@
 #include "EventHandler.h"
-#include <stdio.h>
-#include <string.h>
 
 bool EventHandler::events[];
 

@@ -8,7 +8,7 @@ public:
 	_Animator(int f);
 	~_Animator() {};
 
-	void play(const char* key);
+	void play(const char* key, bool override = false);
 	void update();
 
 	unsigned int getFrame() { return frame; };

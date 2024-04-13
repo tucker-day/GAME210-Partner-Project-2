@@ -5,16 +5,22 @@
 _Animator::_Animator(int f)
 	: frame(f), frameRateTrack(0), repeatTrack(0), currentAnim(nullptr) {}
 
-void _Animator::play(const char* key)
+// if override is true, it will play the new animation even if the animation is already playing
+void _Animator::play(const char* key, bool override)
 {
 	// get the new animation based on the key and reset trackers
-	currentAnim = LoadManager::getAnim(key);
+	_Anim* newAnim = LoadManager::getAnim(key);
 
-	if (currentAnim != nullptr)
+	// don't play new animation if it dosen't exist
+	if (newAnim != nullptr)
 	{
-		frame = currentAnim->startFrame;
-		frameRateTrack = 0;
-		repeatTrack = 0;
+		if (newAnim != currentAnim || override)
+		{
+			currentAnim = newAnim;
+			frame = currentAnim->startFrame;
+			frameRateTrack = 0;
+			repeatTrack = 0;
+		}
 	}
 }
 
