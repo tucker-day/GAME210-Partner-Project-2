@@ -1,6 +1,6 @@
 #include "EventHandler.h"
 
-bool EventHandler::events[];
+Key EventHandler::events[];
 
 EventHandler::EventHandler()
 {
@@ -22,30 +22,56 @@ bool EventHandler::Update()
 		{
 		case SDLK_w:
 		{
-			SetButton(GameEvents::W_PRESSED, currEvents.key.type == SDL_KEYDOWN);
+			SetButton(GameEvents::W_KEY, currEvents.key.type == SDL_KEYDOWN);
 			break;
 		}
 		case SDLK_s:
 		{
-			SetButton(GameEvents::S_PRESSED, currEvents.key.type == SDL_KEYDOWN);
+			SetButton(GameEvents::S_KEY, currEvents.key.type == SDL_KEYDOWN);
 			break;
 		}
 		case SDLK_a:
 		{
-			SetButton(GameEvents::A_PRESSED, currEvents.key.type == SDL_KEYDOWN);
+			SetButton(GameEvents::A_KEY, currEvents.key.type == SDL_KEYDOWN);
 			break;
 		}
 		case SDLK_d:
 		{
-			SetButton(GameEvents::D_PRESSED, currEvents.key.type == SDL_KEYDOWN);
+			SetButton(GameEvents::D_KEY, currEvents.key.type == SDL_KEYDOWN);
 			break;
 		}
 		}
 	}
+
+	// check for quit event
+	if (currEvents.type == SDL_QUIT)
+	{
+		success = false;
+	}
+
 	return success;
+}
+
+void EventHandler::CleanState()
+{
+	for (int i = 0; i < NUM_GAME_EVENTS; i++)
+	{
+		events[i].pressed = false;
+		events[i].raised = false;
+	}
 }
 
 void EventHandler::SetButton(GameEvents eventNum, bool pressed)
 {
-	events[eventNum] = pressed;
+	// set bools based on input
+	if (pressed)
+	{
+		events[eventNum].pressed = true;
+		events[eventNum].held = true;
+	}
+	else
+	{
+		events[eventNum].held = false;
+		events[eventNum].raised = true;
+	}
 }

@@ -1,13 +1,14 @@
 #pragma once
 
 #include "SDL.h"
+#include "Key.h"
 
 enum GameEvents
 {
-	W_PRESSED,
-	S_PRESSED,
-	A_PRESSED,
-	D_PRESSED,
+	W_KEY,
+	S_KEY,
+	A_KEY,
+	D_KEY,
 
 	NUM_GAME_EVENTS
 };
@@ -19,10 +20,9 @@ public:
 	~EventHandler();
 
 	static bool Update();
-
-	static const int NUM_EVENTS = 10;
+	static void CleanState();
  
-	static bool events[GameEvents::NUM_GAME_EVENTS];
+	static Key events[GameEvents::NUM_GAME_EVENTS];
 private:
 
 	static void SetButton(GameEvents eventNum, bool pressed);

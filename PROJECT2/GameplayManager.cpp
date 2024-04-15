@@ -20,16 +20,16 @@ void GameplayManager::Init()
 
 void GameplayManager::Update()
 {	
-	if (EventHandler::events[W_PRESSED]) {
+	if (EventHandler::events[W_KEY].held) {
 		player->transform.y -= 2;
 	}
-	if (EventHandler::events[S_PRESSED]) {
+	if (EventHandler::events[S_KEY].held) {
 		player->transform.y += 2;
 	}
-	if (EventHandler::events[D_PRESSED]) {
+	if (EventHandler::events[D_KEY].held) {
 		player->transform.x += 2;
 	}
-	if (EventHandler::events[A_PRESSED]) {
+	if (EventHandler::events[A_KEY].held) {
 		player->transform.x -= 2;
 	}
 

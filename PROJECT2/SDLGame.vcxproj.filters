@@ -115,6 +115,9 @@
     <ClInclude Include="Animator.h">
       <Filter>Source Files\Objects\Animator</Filter>
     </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="error.bmp">

@@ -28,6 +28,9 @@ int main( int argc, char *argv[] )
 
 		SDL_Delay(Game.frameTimeLeft());
 
+		// clean the event state
+		EventHandler::CleanState();
+
 		// apply the changes to the screen 
 		Graphics::EndRender();
 	}
