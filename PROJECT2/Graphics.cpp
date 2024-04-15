@@ -4,6 +4,9 @@ SDL_Window* Graphics::window;
 SDL_Renderer* Graphics::renderer;
 TTF_Font* Graphics::font;
 
+int Graphics::cameraX;
+int Graphics::cameraY;
+
 bool Graphics::Init()
 {
 	// create little window with minimize and x to close 
@@ -28,6 +31,9 @@ bool Graphics::Init()
 	TTF_Init();
 
 	font = TTF_OpenFont("arialbd.ttf", 24);
+
+	cameraX = 0;
+	cameraY = 0;
 
 	return true;
 }
@@ -160,12 +166,55 @@ _Texture Graphics::CreateTexture(const char* file)
 	return result;
 }
 
-void Graphics::RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform* pos, SDL_Point* rotPoint, SDL_RendererFlip flip)
+void Graphics::MoveCamera(int x, int y)
 {
-	SDL_RenderCopyEx(renderer, texture, src, pos, pos->rot, rotPoint, flip);
+	cameraX += x;
+	cameraY += y;
 }
 
-void Graphics::RenderRect(SDL_Rect rect)
+void Graphics::MoveCameraTo(int x, int y, bool centered)
 {
-	SDL_RenderDrawRect(renderer, &rect);
+	cameraX = x - ((centered) ? WINDOW_WIDTH / 2 : 0);
+	cameraY = y - ((centered) ? WINDOW_HEIGHT / 2 : 0);
+}
+
+void Graphics::MoveCameraTo(SDL_Rect rect, bool centered)
+{
+	int x = rect.x + ((centered) ? rect.w / 2 : 0);
+	int y = rect.y + ((centered) ? rect.h / 2 : 0);
+
+	cameraX = x - ((centered) ? WINDOW_WIDTH / 2 : 0);
+	cameraY = y - ((centered) ? WINDOW_HEIGHT / 2 : 0);
+}
+
+void Graphics::RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform* pos, SDL_Point* rotPoint, SDL_RendererFlip flip, bool followCamera)
+{
+	if (followCamera)
+	{
+		SDL_RenderCopyEx(renderer, texture, src, pos, pos->rot, rotPoint, flip);
+	}
+	else
+	{
+		_Transform temp = *pos;
+		temp.x -= cameraX;
+		temp.y -= cameraY;
+
+		SDL_RenderCopyEx(renderer, texture, src, &temp, pos->rot, rotPoint, flip);
+	}
+}
+
+void Graphics::RenderRect(SDL_Rect rect, bool followCamera)
+{
+	if (followCamera)
+	{
+		SDL_RenderDrawRect(renderer, &rect);
+	}
+	else
+	{
+		SDL_Rect temp = rect;
+		temp.x -= cameraX;
+		temp.y -= cameraY;
+
+		SDL_RenderDrawRect(renderer, &temp);
+	}
 }

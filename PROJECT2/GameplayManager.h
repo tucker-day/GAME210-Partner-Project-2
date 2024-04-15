@@ -23,6 +23,7 @@ private:
 
 	GameObject* player;
 	GameObject* test;
+	GameObject* uiTest;
 
 	ObjectFactory objects;
 };

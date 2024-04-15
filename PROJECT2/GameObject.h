@@ -15,6 +15,7 @@ public:
 
 	_Body body;
 	_Transform transform;
+	bool followCamera = false;
 
 	void play(const char* key, bool overide = false);
 

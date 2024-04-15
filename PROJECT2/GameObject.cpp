@@ -24,12 +24,12 @@ void GameObject::render()
 
 		SDL_Rect frame = { frameX, frameY, sprite->frameWidth, sprite->frameHeight };
 
-		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform);
+		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, 0, SDL_FLIP_NONE, followCamera);
 	}
 
 	if (Graphics::RENDER_BODIES)
 	{
-		Graphics::RenderRect(body.getRect());
+		Graphics::RenderRect(body.getRect(), followCamera);
 	}
 }
 

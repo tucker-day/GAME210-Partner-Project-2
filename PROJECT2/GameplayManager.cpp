@@ -16,6 +16,9 @@ void GameplayManager::Init()
 	player->play("knight_walk");
 
 	test = objects.createSprite(200, 200, 0, "error");
+
+	uiTest = objects.createSprite(25, 25, 0, "error");
+	uiTest->followCamera = true;
 }
 
 void GameplayManager::Update()
@@ -41,6 +44,8 @@ void GameplayManager::Update()
 	}
 
 	objects.updateAll();
+
+	Graphics::MoveCameraTo(player->body.getRect());
 }
 
 void GameplayManager::Render()
