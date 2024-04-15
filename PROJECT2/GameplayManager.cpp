@@ -19,6 +19,11 @@ void GameplayManager::Init()
 
 	uiTest = objects.createSprite(25, 25, 0, "error");
 	uiTest->followCamera = true;
+
+	textTest = objects.createText("Test", 0, 0, 100, 255, 0, 255);
+
+	uiText = objects.createText("Ui Test", 200, 50, 100, 255, 0, 255);
+	uiText->followCamera = true;
 }
 
 void GameplayManager::Update()
@@ -34,6 +39,16 @@ void GameplayManager::Update()
 	}
 	if (EventHandler::events[A_KEY].held) {
 		player->transform.x -= 2;
+	}
+
+	if (EventHandler::events[W_KEY].pressed) {
+		textTest->setColour(255, 255, 255);
+	}
+	if (EventHandler::events[A_KEY].pressed) {
+		textTest->setText("It did the thing");
+	}
+	if (EventHandler::events[D_KEY].pressed) {
+		textTest->setFontSize(50);
 	}
 
 	test->transform.rot += 2;

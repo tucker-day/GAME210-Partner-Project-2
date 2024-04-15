@@ -166,6 +166,19 @@ _Texture Graphics::CreateTexture(const char* file)
 	return result;
 }
 
+_Texture Graphics::CreateText(const char* text, SDL_Color color)
+{
+	SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
+
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+	_Texture temp = {texture, surface->w, surface->h};
+
+	SDL_FreeSurface(surface);
+
+	return temp;
+}
+
 void Graphics::MoveCamera(int x, int y)
 {
 	cameraX += x;

@@ -6,6 +6,7 @@ ObjectFactory::ObjectFactory()
 {
 	// create the game objects vector
 	Objects = new vector<GameObject*>();
+	TextElements = new vector<Text*>();
 }
 
 ObjectFactory::~ObjectFactory()
@@ -51,6 +52,17 @@ void ObjectFactory::renderAll()
 				}
 			}
 		}
+
+		if (!TextElements->empty())
+		{
+			for (Text* object : *TextElements)
+			{
+				if (object != nullptr)
+				{
+					object->render();
+				}
+			}
+		}
 	}
 }
 
@@ -71,6 +83,16 @@ GameObject* ObjectFactory::createSprite(int x, int y, int rot, const char* key, 
 
 	// return the pointer to the new object
 	return obj;
+}
+
+Text* ObjectFactory::createText(const char* text, int x, int y, int fontSize, int r, int g, int b, bool visable)
+{
+	Text* newText = new Text(text, x, y, fontSize, r, g, b);
+	newText->visable = visable;
+
+	TextElements->push_back(newText);
+
+	return newText;
 }
 
 // WARNING: i have not tested this yet so im not sure if it'll break stuff. you have been warned!

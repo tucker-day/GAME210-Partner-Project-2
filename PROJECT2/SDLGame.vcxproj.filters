@@ -42,6 +42,9 @@
     <Filter Include="Source Files\Objects\Animator">
       <UniqueIdentifier>{cb5e205d-9e88-4637-91e3-60f64ad2a84d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects\Text">
+      <UniqueIdentifier>{73ec8d20-d837-417f-b016-2026c123eca4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="Animator.cpp">
       <Filter>Source Files\Objects\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\Objects\Text</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +123,9 @@
     </ClInclude>
     <ClInclude Include="Key.h">
       <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Source Files\Objects\Text</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -25,5 +25,8 @@ private:
 	GameObject* test;
 	GameObject* uiTest;
 
+	Text* textTest;
+	Text* uiText;
+
 	ObjectFactory objects;
 };

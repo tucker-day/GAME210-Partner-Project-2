@@ -26,6 +26,7 @@ public:
 
 	// creates a texture from a bmp file
 	static _Texture CreateTexture(const char* file);
+	static _Texture CreateText(const char* text, SDL_Color color);
 
 	static void MoveCamera(int x, int y);
 	static void MoveCameraTo(int x, int y, bool centered = true);

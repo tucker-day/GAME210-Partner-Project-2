@@ -5,6 +5,7 @@
 
 #include "LoadManager.h"
 #include "GameObject.h"
+#include "Text.h"
 
 using namespace std;
 
@@ -24,6 +25,8 @@ public:
 	// will be automatically rendered
 	GameObject* createSprite(int x, int y, int rot, const char* key, short startFrame = 0, bool visable = true);
 
+	Text* createText(const char* text, int x, int y, int fontSize, int r = 0, int g = 0, int b = 0, bool visable = true);
+
 	// adds an already created object into the factory. this is useful to get objects created outside of
 	// the factory into the factory's render loop
 	void addExisting(GameObject* object);
@@ -37,4 +40,7 @@ public:
 private:
 	// create a pointer to a vector of game object pointers
 	vector<GameObject*>* Objects;
+
+	// pointer to text elements
+	vector<Text*>* TextElements;
 };

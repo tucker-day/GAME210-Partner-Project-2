@@ -16,6 +16,7 @@ public:
 	_Body body;
 	_Transform transform;
 	bool followCamera = false;
+	bool visable;
 
 	void play(const char* key, bool overide = false);
 
@@ -25,5 +26,4 @@ public:
 private:
 	_Sprite* sprite;
 	_Animator animator;
-	bool visable;
 };
