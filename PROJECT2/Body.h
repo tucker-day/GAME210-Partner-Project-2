@@ -25,6 +25,8 @@ public:
 	// sets the width and height of the body
 	void setSize(int w, int h);
 
+	void render(bool followCamera = false);
+
 private:
 	SDL_Rect rect;
 	int offsetX = 0, offsetY = 0;

@@ -40,6 +40,17 @@ void ObjectFactory::renderAll()
 				object->render();
 			}
 		}
+
+		if (Graphics::RENDER_BODIES)
+		{
+			for (GameObject* object : *Objects)
+			{
+				if (object != nullptr)
+				{
+					object->body.render(object->followCamera);
+				}
+			}
+		}
 	}
 }
 

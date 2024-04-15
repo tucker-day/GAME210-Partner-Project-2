@@ -26,11 +26,6 @@ void GameObject::render()
 
 		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, 0, SDL_FLIP_NONE, followCamera);
 	}
-
-	if (Graphics::RENDER_BODIES)
-	{
-		Graphics::RenderRect(body.getRect(), followCamera);
-	}
 }
 
 void GameObject::update()

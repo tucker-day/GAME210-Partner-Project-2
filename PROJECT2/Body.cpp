@@ -1,5 +1,7 @@
 #include "Body.h"
 
+#include "Graphics.h"
+
 bool _Body::checkCollision(_Body other)
 {
 	bool hor = false;
@@ -67,4 +69,9 @@ void _Body::setSize(int w, int h)
 {
 	rect.w = w;
 	rect.h = h;
+}
+
+void _Body::render(bool followCamera)
+{
+	Graphics::RenderRect(rect, followCamera);
 }
