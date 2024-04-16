@@ -14,6 +14,7 @@ public:
 	void setFontSize(int size);
 	void setOrigin(float x);
 	void setOrigin(float x, float y);
+	void setRotPoint(float x, float y) { rotPoint = { (int)round(transform.w * x), (int)round(transform.h * y) }; }
 
 	void render();
 
@@ -26,6 +27,7 @@ private:
 
 	SDL_Texture* texture;
 	SDL_Color colour;
+	SDL_Point rotPoint = { 0, 0 };
 	float originX = 0, originY = 0;
 	int fontSize;
 	const char* text;

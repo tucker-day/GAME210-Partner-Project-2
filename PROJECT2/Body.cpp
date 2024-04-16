@@ -4,31 +4,7 @@
 
 bool _Body::checkCollision(_Body other)
 {
-	bool hor = false;
-	bool vert = false;
-
-	// get the left most shape and check if they are colliding on the horizontal axis
-	if (rect.x < other.rect.x)
-	{
-		hor = (other.rect.x < rect.x + rect.w);
-	}
-	else
-	{
-		hor = (rect.x < other.rect.x + other.rect.w);
-	}
-
-	// get the highest shape and check if colliding on vertical axis
-	if (rect.y < other.rect.y)
-	{
-		vert = (other.rect.y < rect.y + rect.h);
-	}
-	else
-	{
-		vert = (rect.y < other.rect.y + other.rect.h);
-	}
-
-	// return true if both are true
-	return hor && vert;
+	return SDL_HasIntersection(&rect, &other.rect);
 }
 
 void _Body::setOffset(int x, int y)

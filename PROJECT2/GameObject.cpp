@@ -3,7 +3,10 @@
 #include "Graphics.h"
 
 GameObject::GameObject(_Sprite* s, _Body b, _Transform t, int f, bool v)
-	: sprite(s), body(b), transform(t), visable(v), animator(_Animator(f)) {}
+	: sprite(s), body(b), transform(t), visable(v), animator(_Animator(f)) 
+{
+	setRotPoint(0.5, 0.5);
+}
 
 void GameObject::play(const char* key, bool override)
 {
@@ -24,7 +27,7 @@ void GameObject::render()
 
 		SDL_Rect frame = { frameX, frameY, sprite->frameWidth, sprite->frameHeight };
 
-		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, 0, SDL_FLIP_NONE, followCamera);
+		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, &rotPoint, SDL_FLIP_NONE, followCamera);
 	}
 }
 

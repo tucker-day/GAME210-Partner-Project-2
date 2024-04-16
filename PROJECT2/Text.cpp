@@ -57,7 +57,7 @@ void Text::render()
 		temp.x -= temp.w * originX;
 		temp.y -= temp.h * originY;
 
-		Graphics::RenderGameObject(texture, NULL, &temp, 0, SDL_FLIP_NONE, followCamera);
+		Graphics::RenderGameObject(texture, NULL, &temp, &rotPoint, SDL_FLIP_NONE, followCamera);
 	}
 }
 

@@ -19,6 +19,7 @@ public:
 	bool visable;
 
 	void play(const char* key, bool overide = false);
+	void setRotPoint(float x, float y) { rotPoint = { (int)round(transform.w * x), (int)round(transform.h * y) }; }
 
 	virtual void render();
 	virtual void update();
@@ -26,4 +27,5 @@ public:
 private:
 	_Sprite* sprite;
 	_Animator animator;
+	SDL_Point rotPoint = { 0, 0 };
 };
