@@ -221,15 +221,26 @@ void Graphics::RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform*
 {
 	if (followCamera)
 	{
-		SDL_RenderCopyEx(renderer, texture, src, pos, pos->rot, rotPoint, flip);
+		// check if on screen
+		SDL_Rect view = { 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT };
+		if (SDL_HasIntersection(pos, &view))
+		{
+			SDL_RenderCopyEx(renderer, texture, src, pos, pos->rot, rotPoint, flip);
+		}
 	}
 	else
 	{
+		// move to correct camera position
 		_Transform temp = *pos;
 		temp.x -= cameraX;
 		temp.y -= cameraY;
 
-		SDL_RenderCopyEx(renderer, texture, src, &temp, pos->rot, rotPoint, flip);
+		// check if on screen
+		SDL_Rect view = { cameraX, cameraY, WINDOW_WIDTH, WINDOW_HEIGHT };
+		if (SDL_HasIntersection(pos, &view))
+		{
+			SDL_RenderCopyEx(renderer, texture, src, &temp, pos->rot, rotPoint, flip);
+		}
 	}
 }
 
