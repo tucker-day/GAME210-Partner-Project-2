@@ -22,8 +22,9 @@ void GameplayManager::Init()
 
 	textTest = objects.createText("Test", 0, 0, 100, 255, 0, 255);
 
-	uiText = objects.createText("Ui Test", 200, 50, 100, 255, 0, 255);
+	uiText = objects.createText("Ui Test", Graphics::WINDOW_WIDTH / 2, 50, 100, 255, 0, 255);
 	uiText->followCamera = true;
+	uiText->setOrigin(0.5, 0);
 }
 
 void GameplayManager::Update()

@@ -37,6 +37,12 @@ public:
 	// deletes every object in the vector
 	void deleteAllObjects();
 
+	// deletes a text element
+	void deleteText(Text** element);
+
+	// deletes every text element
+	void deleteAllText();
+
 private:
 	// create a pointer to a vector of game object pointers
 	vector<GameObject*>* Objects;

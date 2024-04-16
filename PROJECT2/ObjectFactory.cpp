@@ -131,3 +131,34 @@ void ObjectFactory::deleteAllObjects()
 	// clear all the pointers
 	Objects->clear();
 }
+
+void ObjectFactory::deleteText(Text** element)
+{
+	// check if the object is inside of the objects vector and erase it if it is
+	for (unsigned int i = 0; i < TextElements->size(); i++)
+	{
+		if (TextElements->at(i) == *element)
+		{
+			TextElements->erase(TextElements->begin() + i);
+			break;
+		}
+	}
+
+	// delete the object out of heap
+	delete* element;
+
+	// make the passed pointer a null pointer
+	*element = nullptr;
+}
+
+void ObjectFactory::deleteAllText()
+{
+	// delete all the objects
+	for (int i = 0; i < TextElements->size(); i++)
+	{
+		delete TextElements->at(i);
+	}
+
+	// clear all the pointers
+	TextElements->clear();
+}

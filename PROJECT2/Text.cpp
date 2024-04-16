@@ -11,7 +11,6 @@ Text::Text(const char* newText, int x, int y, int fSize, int r, int g, int b)
 
 void Text::setColour(int r, int g, int b)
 {
-	// sdl colours cant compare so... pain
 	if (r != colour.r || g != colour.g || b != colour.b)
 	{
 		colour = { (unsigned char)r, (unsigned char)g, (unsigned char)b };
@@ -36,9 +35,30 @@ void Text::setFontSize(int size)
 	fontSize = size;
 }
 
+void Text::setOrigin(float xy)
+{
+	originX = xy;
+	originY = xy;
+}
+
+void Text::setOrigin(float x, float y)
+{
+	originX = x;
+	originY = y;
+}
+
 void Text::render()
 {
-	Graphics::RenderGameObject(texture, NULL, &transform, 0, SDL_FLIP_NONE, followCamera);
+	if (visable)
+	{
+		// adjust for different origin
+		_Transform temp = transform;
+
+		temp.x -= temp.w * originX;
+		temp.y -= temp.h * originY;
+
+		Graphics::RenderGameObject(texture, NULL, &temp, 0, SDL_FLIP_NONE, followCamera);
+	}
 }
 
 void Text::updateText()

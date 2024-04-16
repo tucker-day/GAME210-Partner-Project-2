@@ -12,19 +12,21 @@ public:
 	void setColour(int r = 0, int g = 0, int b = 0);
 	void setText(const char* text);
 	void setFontSize(int size);
+	void setOrigin(float x);
+	void setOrigin(float x, float y);
 
 	void render();
 
 	_Transform transform;
 	bool followCamera = false;
 	bool visable = true;
-	bool centered = false;
 
 private:
 	void updateText();
 
 	SDL_Texture* texture;
 	SDL_Color colour;
+	float originX = 0, originY = 0;
 	int fontSize;
 	const char* text;
 };
