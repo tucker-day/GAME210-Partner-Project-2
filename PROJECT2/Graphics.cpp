@@ -6,6 +6,7 @@ TTF_Font* Graphics::font;
 
 int Graphics::cameraX;
 int Graphics::cameraY;
+bool Graphics::inFullscreen;
 
 bool Graphics::Init()
 {
@@ -28,10 +29,14 @@ bool Graphics::Init()
 		return false;
 	}
 
-	TTF_Init();
+	// set up the renderer so that the game logic scales with resolution
+	SDL_RenderSetLogicalSize(renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
 
+	// start text systems
+	TTF_Init();
 	font = TTF_OpenFont("arialbd.ttf", 24);
 
+	// init the camera position
 	cameraX = 0;
 	cameraY = 0;
 
@@ -103,6 +108,18 @@ void Graphics::EndRender()
 	SDL_RenderPresent(renderer);
 	// wait 2 frames
 	SDL_Delay(2);
+}
+
+void Graphics::ToggleFullscreen()
+{
+	SDL_SetWindowFullscreen(window, (!inFullscreen) ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0);
+	inFullscreen = !inFullscreen;
+}
+
+void Graphics::SetFullscreen(bool fs)
+{
+	inFullscreen = fs;
+	SDL_SetWindowFullscreen(window, (!inFullscreen) ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0);
 }
 
 // example based on the code from: https://stackoverflow.com/questions/22886500/how-to-render-text-in-sdl2

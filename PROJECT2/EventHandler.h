@@ -9,6 +9,8 @@ enum GameEvents
 	S_KEY,
 	A_KEY,
 	D_KEY,
+	ESC_KEY,
+	F11_KEY,
 
 	NUM_GAME_EVENTS
 };
@@ -23,8 +25,8 @@ public:
 	static void CleanState();
  
 	static Key events[GameEvents::NUM_GAME_EVENTS];
-private:
 
+private:
 	static void SetButton(GameEvents eventNum, bool pressed);
 };
 

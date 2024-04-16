@@ -22,6 +22,9 @@ public:
 	static void StartRender();
 	static void EndRender();
 
+	static void ToggleFullscreen();
+	static void SetFullscreen(bool fullscreen);
+
 	static void Shutdown() { TTF_CloseFont(font); };
 
 	// creates a texture from a bmp file
@@ -45,6 +48,7 @@ public:
 
 private:
 	static int cameraX, cameraY;
+	static bool inFullscreen;
 
 	static SDL_Renderer* renderer;
 	static SDL_Window* window;

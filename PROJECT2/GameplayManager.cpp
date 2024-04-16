@@ -51,6 +51,10 @@ void GameplayManager::Update()
 		textTest->setFontSize(50);
 	}
 
+	if (EventHandler::events[F11_KEY].pressed) {
+		Graphics::ToggleFullscreen();
+	}
+
 	test->transform.rot += 2;
 
 	if (player->body.checkCollision(test->body))

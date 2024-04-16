@@ -20,31 +20,35 @@ bool EventHandler::Update()
 	{
 		switch (currEvents.key.keysym.sym)
 		{
-		case SDLK_w:
-		{
-			SetButton(GameEvents::W_KEY, currEvents.key.type == SDL_KEYDOWN);
-			break;
-		}
-		case SDLK_s:
-		{
-			SetButton(GameEvents::S_KEY, currEvents.key.type == SDL_KEYDOWN);
-			break;
-		}
-		case SDLK_a:
-		{
-			SetButton(GameEvents::A_KEY, currEvents.key.type == SDL_KEYDOWN);
-			break;
-		}
-		case SDLK_d:
-		{
-			SetButton(GameEvents::D_KEY, currEvents.key.type == SDL_KEYDOWN);
-			break;
-		}
+			case SDLK_w: {
+				SetButton(GameEvents::W_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_s: {
+				SetButton(GameEvents::S_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_a: {
+				SetButton(GameEvents::A_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_d: {
+				SetButton(GameEvents::D_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_F11: {
+				SetButton(GameEvents::F11_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_ESCAPE: {
+				SetButton(GameEvents::ESC_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
 		}
 	}
 
 	// check for quit event
-	if (currEvents.type == SDL_QUIT)
+	if (currEvents.type == SDL_QUIT || events[ESC_KEY].pressed)
 	{
 		success = false;
 	}
