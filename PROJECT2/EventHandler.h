@@ -9,6 +9,7 @@ enum GameEvents
 	S_KEY,
 	A_KEY,
 	D_KEY,
+	R_KEY,
 	ESC_KEY,
 	F11_KEY,
 

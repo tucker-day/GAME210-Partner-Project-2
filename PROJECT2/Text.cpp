@@ -9,6 +9,11 @@ Text::Text(const char* newText, int x, int y, int fSize, int r, int g, int b)
 	updateText();
 }
 
+Text::~Text()
+{
+	SDL_DestroyTexture(texture);
+}
+
 void Text::setColour(int r, int g, int b)
 {
 	if (r != colour.r || g != colour.g || b != colour.b)
@@ -64,6 +69,7 @@ void Text::render()
 void Text::updateText()
 {
 	_Texture newTexture = Graphics::CreateText(text, colour);
+	SDL_DestroyTexture(texture);
 
 	texture = newTexture.texture;
 	transform.h = fontSize;

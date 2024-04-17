@@ -36,6 +36,10 @@ bool EventHandler::Update()
 				SetButton(GameEvents::D_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
+			case SDLK_r: {
+				SetButton(GameEvents::R_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
 			case SDLK_F11: {
 				SetButton(GameEvents::F11_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;

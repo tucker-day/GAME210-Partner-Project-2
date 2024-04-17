@@ -7,7 +7,7 @@ class Text
 {
 public:
 	Text(const char* newText, int x, int y, int fSize, int r = 0, int b = 0, int g = 0);
-	~Text() {};
+	~Text();
 
 	void setColour(int r = 0, int g = 0, int b = 0);
 	void setText(const char* text);

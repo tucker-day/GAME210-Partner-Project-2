@@ -6,7 +6,7 @@
 class GameplayManager
 {
 public:
-	GameplayManager() { Init(); };
+	GameplayManager() { Preload(); Init(); };
 	~GameplayManager() {};
 
 	void Update();
@@ -18,8 +18,11 @@ public:
 private: 
 	const int FRAME_RATE = 60;
 	Uint32 nextTime;
+	bool restartScene = false;
 
+	void Preload();
 	void Init();
+	void Restart();
 
 	GameObject* player;
 	GameObject* test;

@@ -40,6 +40,11 @@ bool Graphics::Init()
 	cameraX = 0;
 	cameraY = 0;
 
+	// make loading message
+	StartRender();
+	DrawText("Loading...", WINDOW_WIDTH / 2 - 100, WINDOW_HEIGHT / 2 - 25, 200, 50);
+	EndRender();
+
 	return true;
 }
 
@@ -125,7 +130,7 @@ void Graphics::SetFullscreen(bool fs)
 // example based on the code from: https://stackoverflow.com/questions/22886500/how-to-render-text-in-sdl2
 void Graphics::DrawText(const char * text, float x, float y, int width, int height)
 {
-	DrawText(text, x, y, width, height, 255, 0, 0);
+	DrawText(text, x, y, width, height, 255, 255, 255);
 }
 
 void Graphics::DrawText(const char* text, float x, float y, int width, int height, int r, int g, int b)
