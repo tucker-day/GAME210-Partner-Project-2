@@ -2,6 +2,7 @@
 
 #include "SDL.h"
 #include "Key.h"
+#include "Controller.h"
 
 enum GameEvents
 {
@@ -22,10 +23,14 @@ public:
 	EventHandler();
 	~EventHandler();
 
+	static void Init();
+	static void Shutdown();
+
 	static bool Update();
 	static void CleanState();
  
 	static Key events[GameEvents::NUM_GAME_EVENTS];
+	static Controller* controller;
 
 private:
 	static void SetButton(GameEvents eventNum, bool pressed);

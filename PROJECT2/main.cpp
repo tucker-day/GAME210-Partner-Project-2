@@ -1,3 +1,5 @@
+#pragma comment(lib, "XInput.lib")
+
 #include "EventHandler.h"
 #include "Graphics.h"
 #include "GameplayManager.h"
@@ -11,6 +13,7 @@ int main( int argc, char *argv[] )
 		return false;
 	}
 	LoadManager::Init();
+	EventHandler::Init();
 
 	GameplayManager Game;
 
@@ -37,6 +40,7 @@ int main( int argc, char *argv[] )
 
 	Graphics::Shutdown();
 	LoadManager::Shutdown();
+	EventHandler::Shutdown();
 
 	//close off the SDL window
 	SDL_Quit();

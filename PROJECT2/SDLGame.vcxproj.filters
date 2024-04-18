@@ -45,6 +45,9 @@
     <Filter Include="Source Files\Objects\Text">
       <UniqueIdentifier>{73ec8d20-d837-417f-b016-2026c123eca4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Events\Controller">
+      <UniqueIdentifier>{1d79d64f-6bd3-40a7-a3fc-3ab5be774d78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -82,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>Source Files\Objects\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Source Files\Events\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +132,9 @@
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Source Files\Objects\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Source Files\Events\Controller</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

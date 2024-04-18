@@ -45,20 +45,20 @@ void GameplayManager::Update()
 {	
 	if (restartScene) { Restart(); }
 
-	if (EventHandler::events[W_KEY].held) {
+	if (EventHandler::events[W_KEY].held || EventHandler::controller->GetStickLYValue() > 0.2) {
 		player->transform.y -= 2;
 	}
-	if (EventHandler::events[S_KEY].held) {
+	if (EventHandler::events[S_KEY].held || EventHandler::controller->GetStickLYValue() < -0.2) {
 		player->transform.y += 2;
 	}
-	if (EventHandler::events[D_KEY].held) {
+	if (EventHandler::events[D_KEY].held || EventHandler::controller->GetStickLXValue() > 0.2) {
 		player->transform.x += 2;
 	}
-	if (EventHandler::events[A_KEY].held) {
+	if (EventHandler::events[A_KEY].held || EventHandler::controller->GetStickLXValue() < -0.2) {
 		player->transform.x -= 2;
 	}
 
-	if (EventHandler::events[W_KEY].pressed) {
+	if (EventHandler::events[W_KEY].pressed || EventHandler::controller->IsAPressed()) {
 		textTest->setColour(255, 255, 255);
 	}
 	if (EventHandler::events[A_KEY].pressed) {

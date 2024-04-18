@@ -1,6 +1,7 @@
 #include "EventHandler.h"
 
 Key EventHandler::events[];
+Controller* EventHandler::controller;
 
 EventHandler::EventHandler()
 {
@@ -10,8 +11,20 @@ EventHandler::~EventHandler()
 {
 }
 
+void EventHandler::Init()
+{
+	controller = new Controller();
+}
+
+void EventHandler::Shutdown()
+{
+	delete controller;
+}
+
 bool EventHandler::Update()
 {
+	controller->Update();
+
 	bool success = true;
 
 	SDL_Event currEvents;

@@ -23,6 +23,7 @@
     <ClCompile Include="Body.cpp" />
     <ClCompile Include="ColourBlock.cpp" />
     <ClCompile Include="ColourCircle.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="Animator.h" />
     <ClInclude Include="ColourBlock.h" />
     <ClInclude Include="ColourCircle.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Body.h" />
     <ClInclude Include="GameplayManager.h" />
