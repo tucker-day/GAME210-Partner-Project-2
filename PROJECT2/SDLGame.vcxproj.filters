@@ -128,4 +128,53 @@
       <Filter>Source Files\Leaderboard</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="knightSheet.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="saw.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sawIcon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="shroom.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="skeleton.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprint.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sword.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="swordIcon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="axe.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="axeIcon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="error.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="flyingEye.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="goblin.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arialbd.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
 </Project>

@@ -48,6 +48,25 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="axe.bmp" />
+    <Image Include="axeIcon.bmp" />
+    <Image Include="error.bmp" />
+    <Image Include="flyingEye.bmp" />
+    <Image Include="goblin.bmp" />
+    <Image Include="grass.bmp" />
+    <Image Include="knightSheet.bmp" />
+    <Image Include="saw.bmp" />
+    <Image Include="sawIcon.bmp" />
+    <Image Include="shroom.bmp" />
+    <Image Include="skeleton.bmp" />
+    <Image Include="sprint.bmp" />
+    <Image Include="sword.bmp" />
+    <Image Include="swordIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arialbd.ttf" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{60e5e4b6-bf79-4809-a8e3-e4561d9ba0f3}</ProjectGuid>
