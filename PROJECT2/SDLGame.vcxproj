@@ -28,6 +28,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Leaderboard.cpp" />
     <ClCompile Include="LoadManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectFactory.cpp" />
@@ -44,15 +45,12 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsData.h" />
     <ClInclude Include="Key.h" />
+    <ClInclude Include="Leaderboard.h" />
     <ClInclude Include="LoadManager.h" />
     <ClInclude Include="ObjData.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Text.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="error.bmp" />
-    <Image Include="knightSheet.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

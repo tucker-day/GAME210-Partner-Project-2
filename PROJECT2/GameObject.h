@@ -17,6 +17,7 @@ public:
 	_Transform transform;
 	bool followCamera = false;
 	bool visable;
+	bool flip = false;
 
 	void play(const char* key, bool overide = false);
 	void setRotPoint(float x, float y) { rotPoint = { (int)round(transform.w * x), (int)round(transform.h * y) }; }

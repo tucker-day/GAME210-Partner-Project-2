@@ -27,7 +27,7 @@ void GameObject::render()
 
 		SDL_Rect frame = { frameX, frameY, sprite->frameWidth, sprite->frameHeight };
 
-		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, &rotPoint, SDL_FLIP_NONE, followCamera);
+		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, &rotPoint, (flip) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE, followCamera);
 	}
 }
 

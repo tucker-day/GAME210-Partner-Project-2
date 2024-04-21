@@ -48,6 +48,9 @@
     <Filter Include="Source Files\Events\Controller">
       <UniqueIdentifier>{1d79d64f-6bd3-40a7-a3fc-3ab5be774d78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Leaderboard">
+      <UniqueIdentifier>{638317b5-c281-499e-9bdb-f50972194ab0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -89,13 +92,13 @@
     <ClCompile Include="Controller.cpp">
       <Filter>Source Files\Events\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="Leaderboard.cpp">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics.h">
       <Filter>Source Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="EventHandler.h">
-      <Filter>Source Files\Events</Filter>
     </ClInclude>
     <ClInclude Include="GameplayManager.h">
       <Filter>Source Files\Gameplay</Filter>
@@ -136,13 +139,11 @@
     <ClInclude Include="Controller.h">
       <Filter>Source Files\Events\Controller</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="error.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="knightSheet.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaderboard.h">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

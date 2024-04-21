@@ -109,15 +109,16 @@ void ObjectFactory::deleteObject(GameObject** object)
 		if (Objects->at(i) == *object)
 		{
 			Objects->erase(Objects->begin() + i);
+
+			// delete the object out of heap
+			delete* object;
+
+			// make the passed pointer a null pointer
+			*object = nullptr;
+
 			break;
 		}
 	}
-
-	// delete the object out of heap
-	delete *object;
-
-	// make the passed pointer a null pointer
-	*object = nullptr;
 }
 
 void ObjectFactory::deleteAllObjects()

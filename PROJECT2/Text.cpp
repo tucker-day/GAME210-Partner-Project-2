@@ -25,11 +25,8 @@ void Text::setColour(int r, int g, int b)
 
 void Text::setText(const char* newText)
 {
-	if (text != newText)
-	{
-		text = newText;
-		updateText();
-	}
+	text = newText;
+	updateText();
 }
 
 void Text::setFontSize(int size)
@@ -73,5 +70,5 @@ void Text::updateText()
 
 	texture = newTexture.texture;
 	transform.h = fontSize;
-	transform.w = fontSize * (newTexture.width / newTexture.height);
+	transform.w = fontSize * strlen(text) / 2.5;
 }

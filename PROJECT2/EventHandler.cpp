@@ -29,32 +29,48 @@ bool EventHandler::Update()
 
 	SDL_Event currEvents;
 
-	while(	SDL_PollEvent(&currEvents))
+	while(SDL_PollEvent(&currEvents))
 	{
 		switch (currEvents.key.keysym.sym)
 		{
-			case SDLK_w: {
-				SetButton(GameEvents::W_KEY, currEvents.key.type == SDL_KEYDOWN);
+			case SDLK_UP: {
+				SetButton(GameEvents::UP_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
-			case SDLK_s: {
-				SetButton(GameEvents::S_KEY, currEvents.key.type == SDL_KEYDOWN);
+			case SDLK_DOWN: {
+				SetButton(GameEvents::DOWN_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
-			case SDLK_a: {
-				SetButton(GameEvents::A_KEY, currEvents.key.type == SDL_KEYDOWN);
+			case SDLK_LEFT: {
+				SetButton(GameEvents::LEFT_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
-			case SDLK_d: {
-				SetButton(GameEvents::D_KEY, currEvents.key.type == SDL_KEYDOWN);
+			case SDLK_RIGHT: {
+				SetButton(GameEvents::RIGHT_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
 			case SDLK_r: {
 				SetButton(GameEvents::R_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
+			case SDLK_z: {
+				SetButton(GameEvents::Z_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_x: {
+				SetButton(GameEvents::X_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_c: {
+				SetButton(GameEvents::C_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
 			case SDLK_F11: {
 				SetButton(GameEvents::F11_KEY, currEvents.key.type == SDL_KEYDOWN);
+				break;
+			}
+			case SDLK_SPACE: {
+				SetButton(GameEvents::SPACE_KEY, currEvents.key.type == SDL_KEYDOWN);
 				break;
 			}
 			case SDLK_ESCAPE: {
@@ -65,7 +81,7 @@ bool EventHandler::Update()
 	}
 
 	// check for quit event
-	if (currEvents.type == SDL_QUIT || events[ESC_KEY].pressed)
+	if (currEvents.type == SDL_QUIT || events[ESC_KEY].pressed || controller->IsBackPressed())
 	{
 		success = false;
 	}

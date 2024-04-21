@@ -26,6 +26,9 @@ public:
 	// returns a pointer to the sprite object
 	static _Sprite* getSprite(const char* key);
 
+	// checks if sprite with key exists
+	static bool spriteKeyExists(const char* key);
+
 	// returns a pointer to the anim object
 	static _Anim* getAnim(const char* key);
 

@@ -8,6 +8,9 @@ void LoadManager::Init()
 	// create the vectors
 	sprites = new vector<_Sprite*>();
 	animations = new vector<_Anim*>();
+
+	// create a error texture
+	loadSprite("error", "error.bmp");
 }
 
 void LoadManager::Shutdown()
@@ -35,7 +38,7 @@ void LoadManager::Shutdown()
 void LoadManager::loadSprite(const char* key, const char* file, int spriteWidth, int spriteHeight)
 {
 	// check that an image with that key dosen't already exist
-	if (getSprite(key) == nullptr) 
+	if (!spriteKeyExists(key))
 	{
 		// create the texture
 		_Texture texture = Graphics::CreateTexture(file);
@@ -91,8 +94,25 @@ _Sprite* LoadManager::getSprite(const char* key)
 		}
 	}
 
-	// if there is no sprite with that key, return a null pointer
-	return nullptr;
+	// if there is no sprite with that key, return the error texture (kind of recursion i guess?)
+	return getSprite("error");
+}
+
+bool LoadManager::spriteKeyExists(const char* key)
+{
+	// loop through the sprites vector and return true if key exists
+	if (sprites->size() != 0)
+	{
+		for (_Sprite* i : *sprites)
+		{
+			if (i->key == key)
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 _Anim* LoadManager::getAnim(const char* key)

@@ -8,6 +8,8 @@ bool GameRunning = true;
 
 int main( int argc, char *argv[] )
 {
+	srand(time(0));
+
 	if (!Graphics::Init())
 	{
 		return false;
@@ -26,8 +28,8 @@ int main( int argc, char *argv[] )
 		GameRunning = EventHandler::Update();
 		Graphics::StartRender();
 		
-		Game.Update();
-		Game.Render();
+		if (GameRunning) GameRunning = Game.Update();
+		if (GameRunning) GameRunning = Game.Render();
 
 		SDL_Delay(Game.frameTimeLeft());
 
@@ -38,6 +40,7 @@ int main( int argc, char *argv[] )
 		Graphics::EndRender();
 	}
 
+	Game.Shutdown();
 	Graphics::Shutdown();
 	LoadManager::Shutdown();
 	EventHandler::Shutdown();

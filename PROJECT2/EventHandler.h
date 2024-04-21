@@ -6,13 +6,17 @@
 
 enum GameEvents
 {
-	W_KEY,
-	S_KEY,
-	A_KEY,
-	D_KEY,
+	UP_KEY,
+	DOWN_KEY,
+	LEFT_KEY,
+	RIGHT_KEY,
 	R_KEY,
-	ESC_KEY,
+	Z_KEY,
+	X_KEY,
+	C_KEY,
 	F11_KEY,
+	SPACE_KEY,
+	ESC_KEY,
 
 	NUM_GAME_EVENTS
 };

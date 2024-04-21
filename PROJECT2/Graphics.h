@@ -15,7 +15,7 @@ class Graphics
 public:
 	static const int WINDOW_WIDTH = 1280;
 	static const int WINDOW_HEIGHT = 720;
-	static const bool RENDER_BODIES = true;
+	static const bool RENDER_BODIES = false;
 
 	static bool Init();
 
@@ -35,6 +35,8 @@ public:
 	static void MoveCameraTo(int x, int y, bool centered = true);
 	static void MoveCameraTo(SDL_Rect rect, bool centered = true);
 
+	static int cameraX, cameraY;
+
 	static void RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform* pos, SDL_Point* rotPoint = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE, bool followCamera = false);
 	static void RenderRect(SDL_Rect rect, bool followCamera = false);
 
@@ -47,7 +49,6 @@ public:
 	static void DrawText(const char* text, float x, float y, int width, int height, int r, int g, int b);
 
 private:
-	static int cameraX, cameraY;
 	static bool inFullscreen;
 
 	static SDL_Renderer* renderer;
