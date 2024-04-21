@@ -62,7 +62,7 @@ void GameplayManager::Init()
 	sprintIcon = objects.createSprite(Graphics::WINDOW_WIDTH - 94, Graphics::WINDOW_HEIGHT - 64 - 20, 0, "sprint", 1);
 	sprintIcon->followCamera = true;
 
-	Text* uiText = objects.createText("Space / R3", sprintIcon->transform.x + sprintIcon->transform.w / 2, sprintIcon->transform.y - 5, 10, 255, 255, 255);
+	Text* uiText = objects.createText("Space / L3", sprintIcon->transform.x + sprintIcon->transform.w / 2, sprintIcon->transform.y - 5, 10, 255, 255, 255);
 	uiText->followCamera = true;
 	uiText->setOrigin(0.5, 1);
 
@@ -294,7 +294,7 @@ void GameplayManager::UpdatePlayer()
 		sprintIcon->play("canUse");
 		sprintTimer->visable = false;
 
-		if (EventHandler::events[SPACE_KEY].held || EventHandler::controller->IsRThumbPressed())
+		if (EventHandler::events[SPACE_KEY].held || EventHandler::controller->IsLThumbPressed())
 		{
 			sprintCooldown = SPRINT_COOLDOWN;
 		}
@@ -484,7 +484,7 @@ void GameplayManager::UpdatePlayer()
 	{
 		UpdateHealth(-1);
 
-		// kill self if dead?
+		// kill self if dead
 		if (health <= 0)
 		{
 			GameOver();

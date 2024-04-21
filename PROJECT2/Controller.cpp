@@ -37,19 +37,5 @@ void Controller::Update()
 	else
 	{
 		connected = true;
-		Rumble(GetLeftTriggerValue(), GetRightTriggerValue());
 	}
-}
-
-// parameters are % of max speed
-void Controller::Rumble(float leftSpeed, float rightSpeed)
-{
-	XINPUT_VIBRATION Vibration;
-
-	ZeroMemory(&Vibration, sizeof(XINPUT_VIBRATION));
-
-	Vibration.wLeftMotorSpeed = leftSpeed * MAX_RUMBLE_VALUE;
-	Vibration.wRightMotorSpeed = rightSpeed * MAX_RUMBLE_VALUE;
-
-	XInputSetState(controllerNum, &Vibration);
 }

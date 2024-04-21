@@ -11,7 +11,7 @@ bool Graphics::inFullscreen;
 bool Graphics::Init()
 {
 	// create little window with minimize and x to close 
-	window = SDL_CreateWindow("Partner Project 1",
+	window = SDL_CreateWindow("Fantasy Survivors",
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		WINDOW_WIDTH, WINDOW_HEIGHT,
@@ -54,11 +54,6 @@ void Graphics::StartRender()
 	SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xFF);
 	SDL_RenderClear(renderer);
 	SDL_SetRenderDrawColor(renderer, 255, 0, 255, 0xFF);
-}
-
-void Graphics::SetColor(Colour color)
-{
-	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, 0xFF);
 }
 
 void Graphics::EndRender() 

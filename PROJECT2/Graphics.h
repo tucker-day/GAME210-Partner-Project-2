@@ -40,11 +40,6 @@ public:
 	static void RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform* pos, SDL_Point* rotPoint = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE, bool followCamera = false);
 	static void RenderRect(SDL_Rect rect, bool followCamera = false);
 
-	// james functions
-	static void SetColor(Colour color);
-	/*static void DrawCircle(Transform2D transform, float radius, float lineThickness = 1.0f, int precision = 100);
-	static void DrawRect(Transform2D transform, Vec2D dimensions, bool isFilled = false);
-	static void DrawLine(Transform2D transform, Vec2D dimensions);*/
 	static void DrawText(const char* text, float x, float y, int width, int height);
 	static void DrawText(const char* text, float x, float y, int width, int height, int r, int g, int b);
 

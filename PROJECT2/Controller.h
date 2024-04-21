@@ -36,8 +36,6 @@ public:
 	float GetStickLXValue() { return controllerState.Gamepad.sThumbLX / MAX_STICK_VALUE; }
 	float GetStickLYValue() { return controllerState.Gamepad.sThumbLY / MAX_STICK_VALUE; }
 
-	void Rumble(float leftSpeed, float rightSpeed);
-
 private:
 	short controllerNum;
 	bool connected = false;

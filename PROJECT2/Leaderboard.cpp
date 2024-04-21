@@ -1,9 +1,5 @@
 #include "Leaderboard.h"
 
-///////////////////////////
-// WRITTEN BY TUCKER DAY //
-///////////////////////////
-
 // standard libraries
 #include <fstream>
 
