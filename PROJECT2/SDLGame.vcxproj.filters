@@ -39,6 +39,18 @@
     <Filter Include="Source Files\LoadManager">
       <UniqueIdentifier>{64dce56c-273b-4956-8573-96684e2f47f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects\Animator">
+      <UniqueIdentifier>{cb5e205d-9e88-4637-91e3-60f64ad2a84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Text">
+      <UniqueIdentifier>{73ec8d20-d837-417f-b016-2026c123eca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Controller">
+      <UniqueIdentifier>{1d79d64f-6bd3-40a7-a3fc-3ab5be774d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Leaderboard">
+      <UniqueIdentifier>{638317b5-c281-499e-9bdb-f50972194ab0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -71,13 +83,22 @@
     <ClCompile Include="Body.cpp">
       <Filter>Source Files\Objects\Body</Filter>
     </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Source Files\Objects\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\Objects\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Source Files\Events\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Leaderboard.cpp">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics.h">
       <Filter>Source Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="EventHandler.h">
-      <Filter>Source Files\Events</Filter>
     </ClInclude>
     <ClInclude Include="GameplayManager.h">
       <Filter>Source Files\Gameplay</Filter>
@@ -106,13 +127,23 @@
     <ClInclude Include="GraphicsData.h">
       <Filter>Source Files\Graphics</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="error.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="knightSheet.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="Animator.h">
+      <Filter>Source Files\Objects\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Source Files\Objects\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Source Files\Events\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaderboard.h">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

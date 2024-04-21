@@ -10,6 +10,8 @@ public:
 
 	SDL_Rect getRect() { return rect; };
 
+	bool checkCollision(_Body other);
+
 	// sets an offset for the body. for example, if you tell a body with an offset
 	// of 10x 20y to move to 10x 10y, the body will be placed at 20x 30y
 	void setOffset(int x, int y);
@@ -22,6 +24,8 @@ public:
 
 	// sets the width and height of the body
 	void setSize(int w, int h);
+
+	void render(bool followCamera = false);
 
 private:
 	SDL_Rect rect;

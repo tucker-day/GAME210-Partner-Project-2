@@ -24,6 +24,7 @@ struct _Sprite
 
 struct _Anim
 {
-	int startFrame, endFrame, frameRate, repeat;
+	_Anim(const char* k, int sf, int ef, int fr, int r) : key(k), startFrame(sf), endFrame(ef), frameDelay(fr), repeat(r) {};
 	const char* key;
+	int startFrame, endFrame, frameDelay, repeat;
 };

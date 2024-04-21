@@ -19,33 +19,38 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animator.cpp" />
     <ClCompile Include="Body.cpp" />
     <ClCompile Include="ColourBlock.cpp" />
     <ClCompile Include="ColourCircle.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Leaderboard.cpp" />
     <ClCompile Include="LoadManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectFactory.cpp" />
+    <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animator.h" />
     <ClInclude Include="ColourBlock.h" />
     <ClInclude Include="ColourCircle.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Body.h" />
     <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsData.h" />
+    <ClInclude Include="Key.h" />
+    <ClInclude Include="Leaderboard.h" />
     <ClInclude Include="LoadManager.h" />
     <ClInclude Include="ObjData.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="GameObject.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="error.bmp" />
-    <Image Include="knightSheet.bmp" />
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

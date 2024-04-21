@@ -1,5 +1,12 @@
 #include "Body.h"
 
+#include "Graphics.h"
+
+bool _Body::checkCollision(_Body other)
+{
+	return SDL_HasIntersection(&rect, &other.rect);
+}
+
 void _Body::setOffset(int x, int y)
 {
 	offsetX = x;
@@ -38,4 +45,9 @@ void _Body::setSize(int w, int h)
 {
 	rect.w = w;
 	rect.h = h;
+}
+
+void _Body::render(bool followCamera)
+{
+	Graphics::RenderRect(rect, followCamera);
 }

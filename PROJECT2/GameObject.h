@@ -2,27 +2,31 @@
 
 #include "SDL.h"
 
-#include "GraphicsData.h"
 #include "ObjData.h"
 #include "Body.h"
+#include "GraphicsData.h"
+#include "Animator.h"
 
 class GameObject
 {
 public:
-	GameObject(_Sprite* s, _Body b, _Transform t, int f, bool v) :
-		sprite(s), body(b), transform(t), frame(f), visable(v) {};
+	GameObject(_Sprite* s, _Body b, _Transform t, int f, bool v);
 	~GameObject() {};
 
 	_Body body;
 	_Transform transform;
+	bool followCamera = false;
+	bool visable;
+	bool flip = false;
 
-	void changeFrame() { frame++; }
+	void play(const char* key, bool overide = false);
+	void setRotPoint(float x, float y) { rotPoint = { (int)round(transform.w * x), (int)round(transform.h * y) }; }
 
 	virtual void render();
 	virtual void update();
 
 private:
 	_Sprite* sprite;
-	unsigned int frame;
-	bool visable;
+	_Animator animator;
+	SDL_Point rotPoint = { 0, 0 };
 };

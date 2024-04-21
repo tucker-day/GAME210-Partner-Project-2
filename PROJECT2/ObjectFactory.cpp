@@ -6,6 +6,7 @@ ObjectFactory::ObjectFactory()
 {
 	// create the game objects vector
 	Objects = new vector<GameObject*>();
+	TextElements = new vector<Text*>();
 }
 
 ObjectFactory::~ObjectFactory()
@@ -40,13 +41,35 @@ void ObjectFactory::renderAll()
 				object->render();
 			}
 		}
+
+		if (Graphics::RENDER_BODIES)
+		{
+			for (GameObject* object : *Objects)
+			{
+				if (object != nullptr)
+				{
+					object->body.render(object->followCamera);
+				}
+			}
+		}
+
+		if (!TextElements->empty())
+		{
+			for (Text* object : *TextElements)
+			{
+				if (object != nullptr)
+				{
+					object->render();
+				}
+			}
+		}
 	}
 }
 
 GameObject* ObjectFactory::createSprite(int x, int y, int rot, const char* key, short frame, bool visable)
 {
 	// get the sprite
-	_Sprite* sprite = loadManager.getSprite(key);
+	_Sprite* sprite = LoadManager::getSprite(key);
 
 	// create the body so its in the same position and size as the parent
 	_Body body = _Body({ x, y, sprite->frameWidth, sprite->frameHeight });
@@ -60,6 +83,16 @@ GameObject* ObjectFactory::createSprite(int x, int y, int rot, const char* key, 
 
 	// return the pointer to the new object
 	return obj;
+}
+
+Text* ObjectFactory::createText(const char* text, int x, int y, int fontSize, int r, int g, int b, bool visable)
+{
+	Text* newText = new Text(text, x, y, fontSize, r, g, b);
+	newText->visable = visable;
+
+	TextElements->push_back(newText);
+
+	return newText;
 }
 
 // WARNING: i have not tested this yet so im not sure if it'll break stuff. you have been warned!
@@ -76,15 +109,16 @@ void ObjectFactory::deleteObject(GameObject** object)
 		if (Objects->at(i) == *object)
 		{
 			Objects->erase(Objects->begin() + i);
+
+			// delete the object out of heap
+			delete* object;
+
+			// make the passed pointer a null pointer
+			*object = nullptr;
+
 			break;
 		}
 	}
-
-	// delete the object out of heap
-	delete *object;
-
-	// make the passed pointer a null pointer
-	*object = nullptr;
 }
 
 void ObjectFactory::deleteAllObjects()
@@ -95,7 +129,37 @@ void ObjectFactory::deleteAllObjects()
 		delete Objects->at(i);
 	}
 
-	// clear all the pointers than shrink the vector
+	// clear all the pointers
 	Objects->clear();
-	Objects->shrink_to_fit();
+}
+
+void ObjectFactory::deleteText(Text** element)
+{
+	// check if the object is inside of the objects vector and erase it if it is
+	for (unsigned int i = 0; i < TextElements->size(); i++)
+	{
+		if (TextElements->at(i) == *element)
+		{
+			TextElements->erase(TextElements->begin() + i);
+			break;
+		}
+	}
+
+	// delete the object out of heap
+	delete* element;
+
+	// make the passed pointer a null pointer
+	*element = nullptr;
+}
+
+void ObjectFactory::deleteAllText()
+{
+	// delete all the objects
+	for (int i = 0; i < TextElements->size(); i++)
+	{
+		delete TextElements->at(i);
+	}
+
+	// clear all the pointers
+	TextElements->clear();
 }
