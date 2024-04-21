@@ -408,7 +408,7 @@ void GameplayManager::UpdatePlayer()
 			sword->transform.y = player->body.getRect().y + player->body.getRect().h / 2 - sword->transform.h / 2;
 
 			// have the sword point out from the player in the correct direction based on its flip
-			sword->transform.x = player->body.getRect().x + (sword->flip) ? -sword->transform.w : player->body.getRect().w;
+			sword->transform.x = player->body.getRect().x + ((sword->flip) ? -sword->transform.w : player->body.getRect().w);
 
 			// kill any enemies hit by the sword
 			KillHitEnemies(&sword->body);
