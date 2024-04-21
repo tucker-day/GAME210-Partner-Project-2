@@ -4,6 +4,7 @@
 #include "Key.h"
 #include "Controller.h"
 
+// all keys used in game
 enum GameEvents
 {
 	UP_KEY,
@@ -24,8 +25,8 @@ enum GameEvents
 class EventHandler
 {
 public:
-	EventHandler();
-	~EventHandler();
+	EventHandler() {};
+	~EventHandler() {};
 
 	static void Init();
 	static void Shutdown();

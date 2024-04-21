@@ -41,8 +41,8 @@ public:
 	GameplayManager() : leaderboard("leaderboard.save") { Preload(); Init(); };
 	~GameplayManager() {};
 
-	bool Update();
-	bool Render();
+	void Update();
+	void Render();
 	void Shutdown();
 
 	void updateNextTime();

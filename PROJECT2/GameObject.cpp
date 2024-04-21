@@ -18,15 +18,18 @@ void GameObject::render()
 {
 	if (visable)
 	{
-		// create an sdl rect to display the correct frame
+		// get the frame's position of the x and y axis
 		int frameX = animator.getFrame() % sprite->numSpritesX;
 		int frameY = (int)(floor((float)animator.getFrame() / sprite->numSpritesX)) % sprite->numSpritesY;
 
+		// get the position of the correct frame
 		frameX *= sprite->frameWidth;
 		frameY *= sprite->frameHeight;
 
+		// create a rect
 		SDL_Rect frame = { frameX, frameY, sprite->frameWidth, sprite->frameHeight };
 
+		// call the renderer
 		Graphics::RenderGameObject(sprite->texture.texture, &frame, &transform, &rotPoint, (flip) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE, followCamera);
 	}
 }

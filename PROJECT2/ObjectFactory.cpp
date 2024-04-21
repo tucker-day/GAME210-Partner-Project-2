@@ -18,6 +18,7 @@ ObjectFactory::~ObjectFactory()
 
 void ObjectFactory::updateAll()
 {
+	// updates all objects in the factory
 	if (!Objects->empty())
 	{
 		for (GameObject* object : *Objects)
@@ -32,8 +33,10 @@ void ObjectFactory::updateAll()
 
 void ObjectFactory::renderAll()
 {
+	// render all objects in the factory
 	if (!Objects->empty())
 	{
+		// all sprite game objects
 		for (GameObject* object : *Objects)
 		{
 			if (object != nullptr)
@@ -42,17 +45,7 @@ void ObjectFactory::renderAll()
 			}
 		}
 
-		if (Graphics::RENDER_BODIES)
-		{
-			for (GameObject* object : *Objects)
-			{
-				if (object != nullptr)
-				{
-					object->body.render(object->followCamera);
-				}
-			}
-		}
-
+		// render all the text elements
 		if (!TextElements->empty())
 		{
 			for (Text* object : *TextElements)
@@ -60,6 +53,18 @@ void ObjectFactory::renderAll()
 				if (object != nullptr)
 				{
 					object->render();
+				}
+			}
+		}
+
+		// if rendering bodies, render all the bodies
+		if (Graphics::RENDER_BODIES)
+		{
+			for (GameObject* object : *Objects)
+			{
+				if (object != nullptr)
+				{
+					object->body.render(object->followCamera);
 				}
 			}
 		}

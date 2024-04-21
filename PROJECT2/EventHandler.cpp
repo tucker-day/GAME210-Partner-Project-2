@@ -3,30 +3,26 @@
 Key EventHandler::events[];
 Controller* EventHandler::controller;
 
-EventHandler::EventHandler()
-{
-}
-
-EventHandler::~EventHandler()
-{
-}
-
 void EventHandler::Init()
 {
+	// create the controller
 	controller = new Controller();
 }
 
 void EventHandler::Shutdown()
 {
+	// delete the controller
 	delete controller;
 }
 
 bool EventHandler::Update()
 {
-	controller->Update();
-
 	bool success = true;
 
+	// update controller state
+	controller->Update();
+
+	// update keyboard events
 	SDL_Event currEvents;
 
 	while(SDL_PollEvent(&currEvents))
@@ -91,6 +87,7 @@ bool EventHandler::Update()
 
 void EventHandler::CleanState()
 {
+	// set pressed and raised values to false
 	for (int i = 0; i < NUM_GAME_EVENTS; i++)
 	{
 		events[i].pressed = false;

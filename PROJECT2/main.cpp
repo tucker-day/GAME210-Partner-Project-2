@@ -28,8 +28,8 @@ int main( int argc, char *argv[] )
 		GameRunning = EventHandler::Update();
 		Graphics::StartRender();
 		
-		if (GameRunning) GameRunning = Game.Update();
-		if (GameRunning) GameRunning = Game.Render();
+		if (GameRunning) Game.Update();
+		if (GameRunning) Game.Render();
 
 		SDL_Delay(Game.frameTimeLeft());
 

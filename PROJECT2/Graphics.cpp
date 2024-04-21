@@ -58,17 +58,20 @@ void Graphics::StartRender()
 
 void Graphics::EndRender() 
 {
+	// render everyting
 	SDL_RenderPresent(renderer);
 }
 
 void Graphics::ToggleFullscreen()
 {
+	// toggle the game's fullscreen state
 	SDL_SetWindowFullscreen(window, (!inFullscreen) ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0);
 	inFullscreen = !inFullscreen;
 }
 
 void Graphics::SetFullscreen(bool fs)
 {
+	// set the game's fullscreen state
 	inFullscreen = fs;
 	SDL_SetWindowFullscreen(window, (!inFullscreen) ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0);
 }
@@ -165,12 +168,14 @@ _Texture Graphics::CreateTexture(const char* file)
 
 _Texture Graphics::CreateText(const char* text, SDL_Color color)
 {
+	// create a surface, then texture from the text
 	SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
-
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 
+	// create a texture struct from the SDL_texture
 	_Texture temp = {texture, surface->w, surface->h};
 
+	// free the surface
 	SDL_FreeSurface(surface);
 
 	return temp;
@@ -199,6 +204,7 @@ void Graphics::MoveCameraTo(SDL_Rect rect, bool centered)
 
 void Graphics::RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform* pos, SDL_Point* rotPoint, SDL_RendererFlip flip, bool followCamera)
 {
+	// check if the object is following the camera
 	if (followCamera)
 	{
 		// check if on screen
@@ -226,12 +232,15 @@ void Graphics::RenderGameObject(SDL_Texture* texture, SDL_Rect* src, _Transform*
 
 void Graphics::RenderRect(SDL_Rect rect, bool followCamera)
 {
+	// check if the rect follows the camera
 	if (followCamera)
 	{
+		// render the rect
 		SDL_RenderDrawRect(renderer, &rect);
 	}
 	else
 	{
+		// adjust the rect for camera position, then render
 		SDL_Rect temp = rect;
 		temp.x -= cameraX;
 		temp.y -= cameraY;

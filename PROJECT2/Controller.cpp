@@ -26,16 +26,12 @@ Controller::~Controller()
 
 void Controller::Update()
 {
+	// zero the controller state
 	ZeroMemory(&controllerState, sizeof(XINPUT_STATE));
 
+	// update the controller
 	DWORD Result = XInputGetState(controllerNum, &controllerState);
 
-	if (Result == ERROR_DEVICE_NOT_CONNECTED)
-	{
-		connected = false;
-	}
-	else
-	{
-		connected = true;
-	}
+	// update bool based on connection state
+	connected = (Result != ERROR_DEVICE_NOT_CONNECTED);
 }

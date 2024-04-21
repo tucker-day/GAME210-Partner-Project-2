@@ -27,7 +27,6 @@ public:
 
 	static void Shutdown() { TTF_CloseFont(font); };
 
-	// creates a texture from a bmp file
 	static _Texture CreateTexture(const char* file);
 	static _Texture CreateText(const char* text, SDL_Color color);
 
